@@ -1,0 +1,180 @@
+/* Pushups Tracker - Fun & Bright Stylesheet */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', cursive, sans-serif;
+    background: linear-gradient(135deg, #FFF8E7 0%, #FFD166 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: #4A3728;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #FF6B6B;
+    text-shadow: 3px 3px 0 #FF8C42, 5px 5px 0 #FFD166;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+form {
+    background: white;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(255, 140, 66, 0.3);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 4px solid #FF8C42;
+}
+
+label {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #FF8C42;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    border: 3px solid #FFD166;
+    border-radius: 15px;
+    background: #FFF8E7;
+    color: #4A3728;
+    text-align: center;
+    min-height: 50px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #FF8C42;
+    box-shadow: 0 0 15px rgba(255, 140, 66, 0.4);
+}
+
+button[type="submit"] {
+    background: linear-gradient(180deg, #FF8C42 0%, #FF6B6B 100%);
+    color: white;
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    min-height: 55px;
+    box-shadow: 0 6px 0 #c95a3a, 0 8px 15px rgba(255, 107, 107, 0.4);
+    transition: transform 0.1s, box-shadow 0.1s;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 #c95a3a, 0 10px 20px rgba(255, 107, 107, 0.5);
+}
+
+button[type="submit"]:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #c95a3a, 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid #FF8C42;
+}
+
+th {
+    background: #FF8C42;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    background: #FFF8E7;
+    padding: 12px 10px;
+    font-size: 1.1rem;
+    text-align: center;
+    border-bottom: 2px dashed #FFD166;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:nth-child(even) td {
+    background: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        text-shadow: 2px 2px 0 #FF8C42, 3px 3px 0 #FFD166;
+    }
+
+    form {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    label {
+        font-size: 1.1rem;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+
+    button[type="submit"] {
+        font-size: 1.3rem;
+        padding: 12px 40px;
+        width: 100%;
+    }
+
+    th, td {
+        font-size: 1rem;
+        padding: 10px 8px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding: 15px;
+    }
+}

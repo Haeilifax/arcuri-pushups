@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HOW MANY PUSHUPS????</h1>
+    <form method="POST">
+        <label for="username">Who are you???</label>
+        <input id="username" type="text" name="username" value="{{ username }}" list="username_list" autocomplete="off"/>
+        <datalist id="username_list">
+            {% for contestant in all_pushups %}
+            <option {% if contestant == username %}selected{% endif %} value="{{ contestant }}" label="{{ contestant }}"></option>
+            {% endfor %}
+        </datalist>
+        <label for="pushups">How many pushups????</label>
+        <input id="pushups" type="number" name="pushups" step = "1" min = "0"/>
+        <button type="submit">PUSHUP</button>
+        <table>
+            <tr>
+                <th>WHO?</th>
+                <th>HOW MANY?</th>
+            </tr>
+            {% for contestant, pushups in all_pushups.items() %}
+            <tr>
+                <td>{{ contestant }}</td>
+                <td>{{ pushups }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</body>
+</html>
