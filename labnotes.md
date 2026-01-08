@@ -69,3 +69,24 @@ Annnnd that's it -- So, we just need icons and a manifest file? Seems super easy
 I'm going to add Flask -- that's one of the key techs people ask for pretty often
 
 Flask Documentation / Flask Docs : https://flask.palletsprojects.com/en/stable/
+
+God I hate everything and everyone. I just wanna know how to connect event and context to flask, and convert the response to one I can use.
+
+Okay, nope, this is dumb and I'm going to only use Flask / Django on an actual machine with an actual webserver. There are only bad options here for converting between the Lambda event and context and the wsgi environment, and the response from the flask app
+
+We're gonna take a quick peek for alternative routing tech, and then we're just gonna go.
+
+That's enough, we're building it ourselves
+
+So what does routing look like?
+
+- Be able to register routes on functions (that's how everyone else does it)
+- Run a single router that passes down the event and context to the correct function
+
+Simple as pie, a little stupid that I didn't start wtih this.
+
+We're going to create a registrars dict, and have a registration decorator function that will take in a method and a route, and select the correct function to run.
+
+Then, we're going to have a main function function that just calls the router, passing in event and context.
+
+Should we make the router the main function, the lambda_handler? No, because we want this to be a little bit modular -- I'm envisioning a future where this is broken out, because it's a useful and usable library on its own
