@@ -62,7 +62,7 @@ def lambda_handler(event, context):
             body = base64.b64decode(body).decode("utf-8")
         form_data = urllib.parse.parse_qs(body)
         pushups = form_data["pushups"][0]
-        username = form_data["username"][0].capitalize()
+        username = form_data["username"][0].capitalize().strip()
         ddb.update_item(TableName=TABLENAME, Key={"UserName":{"S":username}}, UpdateExpression="ADD Pushups :pushups", ExpressionAttributeValues={":pushups":{"N":pushups}})
         resp = {
             "statusCode": 303,
